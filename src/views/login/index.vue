@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { reactive, ref } from "vue"
-import { useRouter } from "vue-router"
-import { useUserStore } from "@/store/modules/user"
-import { User, Lock } from "@element-plus/icons-vue"
-import type { FormInstance, FormRules } from "element-plus"
-import type { ILoginData } from "@/api/login"
+import { reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useUserStore } from '@/store/modules/user'
+import { User, Lock } from '@element-plus/icons-vue'
+import type { FormInstance, FormRules } from 'element-plus'
+import type { ILoginData } from '@/api/login'
 
 const router = useRouter()
 const loginFormRef = ref<FormInstance | null>(null)
@@ -13,18 +13,18 @@ const loginFormRef = ref<FormInstance | null>(null)
 const loading = ref(false)
 /** 登录表单数据 */
 const loginForm: ILoginData = reactive({
-  username: "admin",
-  password: "12345678",
-  code: ""
+  username: 'admin',
+  password: '12345678',
+  code: ''
 })
 /** 登录表单校验规则 */
 const loginFormRules: FormRules = {
-  username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
+  username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
   password: [
-    { required: true, message: "请输入密码", trigger: "blur" },
-    { min: 8, max: 16, message: "长度在 8 到 16 个字符", trigger: "blur" }
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 8, max: 16, message: '长度在 8 到 16 个字符', trigger: 'blur' }
   ],
-  code: [{ required: true, message: "请输入验证码", trigger: "blur" }]
+  code: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
 }
 /** 登录逻辑 */
 const handleLogin = () => {
@@ -38,10 +38,10 @@ const handleLogin = () => {
           code: loginForm.code
         })
         .then(() => {
-          router.push({ path: "/" })
+          router.push({ path: '/' })
         })
         .catch(() => {
-          loginForm.password = ""
+          loginForm.password = ''
         })
         .finally(() => {
           loading.value = false

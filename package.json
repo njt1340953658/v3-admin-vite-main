@@ -9,9 +9,8 @@
     "dev": "vite",
     "build:prod": "vue-tsc --noEmit && vite build",
     "preview:prod": "npm build:prod && vite preview",
-    "lint:eslint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
-    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint": "npm lint:eslint && npm lint:prettier"
+    "lint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\""
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.9",

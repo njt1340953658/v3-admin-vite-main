@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { ref, watch } from "vue"
-import { useRoute, useRouter } from "vue-router"
-import type { RouteLocationMatched } from "vue-router"
-import { compile } from "path-to-regexp"
+import { ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
+import type { RouteLocationMatched } from 'vue-router'
+import { compile } from 'path-to-regexp'
 
 const route = useRoute()
 const router = useRouter()
@@ -33,7 +33,7 @@ const handleLink = (item: RouteLocationMatched) => {
 watch(
   () => route.path,
   (path) => {
-    if (path.startsWith("/redirect/")) {
+    if (path.startsWith('/redirect/')) {
       return
     }
     getBreadcrumb()

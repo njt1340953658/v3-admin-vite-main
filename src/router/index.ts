@@ -1,7 +1,7 @@
-import type { RouteRecordRaw } from "vue-router"
-import { createRouter, createWebHashHistory, createWebHistory } from "vue-router"
+import type { RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
-import { asyncRoutesFrom, constantRoutesFrom } from "./router/router"
+import { asyncRoutesFrom, constantRoutesFrom } from './router/router'
 
 /**
  * 动态路由(权限控制)
@@ -15,7 +15,7 @@ export { asyncRoutes, constantRoutes }
 
 const router = createRouter({
   history:
-    import.meta.env.VITE_ROUTER_HISTORY === "hash"
+    import.meta.env.VITE_ROUTER_HISTORY === 'hash'
       ? createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH)
       : createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
   routes: constantRoutes

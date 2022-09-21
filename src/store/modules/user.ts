@@ -1,15 +1,15 @@
-import { ref } from "vue"
-import store from "@/store"
-import { defineStore } from "pinia"
-import { usePermissionStore } from "./permission"
-import { getToken, removeToken, setToken } from "@/utils/cache/cookies"
-import router, { resetRouter } from "@/router"
-import { loginApi, getUserInfoApi } from "@/api/login"
-import type { ILoginData } from "@/api/login"
-import type { RouteRecordRaw } from "vue-router"
+import { ref } from 'vue'
+import store from '@/store'
+import { defineStore } from 'pinia'
+import { usePermissionStore } from './permission'
+import { getToken, removeToken, setToken } from '@/utils/cache/cookies'
+import router, { resetRouter } from '@/router'
+import { loginApi, getUserInfoApi } from '@/api/login'
+import type { ILoginData } from '@/api/login'
+import type { RouteRecordRaw } from 'vue-router'
 
-export const useUserStore = defineStore("user", () => {
-  const token = ref<string>(getToken() || "")
+export const useUserStore = defineStore('user', () => {
+  const token = ref<string>(getToken() || '')
   const roles = ref<string[]>([])
 
   /** 设置角色数组 */
@@ -52,7 +52,7 @@ export const useUserStore = defineStore("user", () => {
 
   /** 切换角色 */
   const changeRoles = async (role: string) => {
-    const newToken = "token-" + role
+    const newToken = 'token-' + role
     token.value = newToken
     setToken(newToken)
     await getInfo()
@@ -67,7 +67,7 @@ export const useUserStore = defineStore("user", () => {
   /** 登出 */
   const logout = () => {
     removeToken()
-    token.value = ""
+    token.value = ''
     roles.value = []
     resetRouter()
   }
@@ -75,7 +75,7 @@ export const useUserStore = defineStore("user", () => {
   /** 重置 Token */
   const resetToken = () => {
     removeToken()
-    token.value = ""
+    token.value = ''
     roles.value = []
   }
 

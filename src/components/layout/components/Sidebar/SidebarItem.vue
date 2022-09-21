@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import { computed } from "vue"
-import type { PropType } from "vue"
-import type { RouteRecordRaw } from "vue-router"
-import SidebarItemLink from "./SidebarItemLink.vue"
-import { isExternal } from "@/utils/validate"
-import path from "path-browserify"
+import { computed } from 'vue'
+import type { PropType } from 'vue'
+import type { RouteRecordRaw } from 'vue-router'
+import SidebarItemLink from './SidebarItemLink.vue'
+import { isExternal } from '@/utils/validate'
+import path from 'path-browserify'
 
 const props = defineProps({
   item: {
@@ -21,7 +21,7 @@ const props = defineProps({
   },
   basePath: {
     type: String,
-    default: ""
+    default: ''
   }
 })
 
@@ -52,7 +52,7 @@ const theOnlyOneChild = computed(() => {
   }
   // If there is no children, return itself with path removed,
   // because this.basePath already contains item's path information
-  return { ...props.item, path: "" }
+  return { ...props.item, path: '' }
 })
 
 const resolvePath = (routePath: string) => {

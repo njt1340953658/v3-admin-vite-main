@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { computed } from "vue"
-import { useAppStore, DeviceType } from "@/store/modules/app"
-import { AppMain, NavigationBar, Sidebar } from "./components"
-import useResize from "./hooks/useResize"
+import { computed } from 'vue'
+import { useAppStore, DeviceType } from '@/store/modules/app'
+import { AppMain, NavigationBar, Sidebar } from './components'
+import useResize from './hooks/useResize'
 
 const appStore = useAppStore()
 
@@ -37,7 +37,7 @@ const handleClickOutside = () => {
 </template>
 
 <style lang="scss" scoped>
-@import "@/styles/mixins.scss";
+@import '@/styles/mixins.scss';
 
 .app-wrapper {
   @include clearfix;

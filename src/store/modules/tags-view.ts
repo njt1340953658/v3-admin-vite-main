@@ -1,10 +1,10 @@
-import { ref } from "vue"
-import { defineStore } from "pinia"
-import type { RouteLocationNormalized } from "vue-router"
+import { ref } from 'vue'
+import { defineStore } from 'pinia'
+import type { RouteLocationNormalized } from 'vue-router'
 
 export type ITagView = Partial<RouteLocationNormalized>
 
-export const useTagsViewStore = defineStore("tags-view", () => {
+export const useTagsViewStore = defineStore('tags-view', () => {
   const visitedViews = ref<ITagView[]>([])
 
   const addVisitedView = (view: ITagView) => {

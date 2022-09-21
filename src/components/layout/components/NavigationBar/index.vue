@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import { computed } from "vue"
-import { useRouter } from "vue-router"
-import { useAppStore } from "@/store/modules/app"
-import { useSettingsStore } from "@/store/modules/settings"
-import { useUserStore } from "@/store/modules/user"
-import { UserFilled } from "@element-plus/icons-vue"
-import Hamburger from "../Hamburger/index.vue"
-import Screenfull from "@/components/Screenfull/index.vue"
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAppStore } from '@/store/modules/app'
+import { useSettingsStore } from '@/store/modules/settings'
+import { useUserStore } from '@/store/modules/user'
+import { UserFilled } from '@element-plus/icons-vue'
+import Hamburger from '../Hamburger/index.vue'
+import Screenfull from '@/components/Screenfull/index.vue'
 
 const router = useRouter()
 const appStore = useAppStore()
@@ -26,7 +26,7 @@ const toggleSidebar = () => {
 }
 const logout = () => {
   userStore.logout()
-  router.push("/login")
+  router.push('/login')
 }
 </script>
 
