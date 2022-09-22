@@ -109,9 +109,11 @@ const service = createService()
 
 const httpApi = createRequestFunction(service)
 
-const request = (url: string, params: object, method?: string) => {
+const request = (url: string, params: object = {}, method = 'get') => {
   const body =
-    method === 'get' ? { url: `${url}?${stringify(params)}`, method, data: params } : { url, method, data: params }
+    method === 'get'
+      ? { url: `${url}?${stringify(params)}`, method, data: params }
+      : { url, method, data: params }
 
   return httpApi(body)
 }
