@@ -9,25 +9,14 @@ export interface ILoginData {
   code: string
 }
 
-/** 获取登录验证码 */
-export function getLoginCodeApi() {
-  return request({
-    url: 'login/code',
-    method: 'get'
-  })
+const api = {
+  login: () => 'login/code',
+  users: () => 'users/login',
+  detail: () => 'users/info'
 }
-/** 登录并返回 Token */
-export function loginApi(data: ILoginData) {
-  return request({
-    url: 'users/login',
-    method: 'post',
-    data
-  })
-}
-/** 获取用户详情 */
-export function getUserInfoApi() {
-  return request({
-    url: 'users/info',
-    method: 'post'
-  })
-}
+
+// 登录信息
+export const loginApi = (params: Record<string, any>) => request(api.users(), params, 'post')
+
+// 获取用户信息
+export const getUserInfoApi = (params: Record<string, any>) => request(api.detail(), params, 'post')

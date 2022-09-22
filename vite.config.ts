@@ -1,9 +1,9 @@
 import { loadEnv } from "vite"
-import type { ConfigEnv, UserConfigExport } from "vite"
+import UnoCSS from "unocss/vite"
 import path, { resolve } from "path"
 import vue from "@vitejs/plugin-vue"
+import type { ConfigEnv, UserConfigExport } from "vite"
 import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
-import UnoCSS from "unocss/vite"
 
 export default (configEnv: ConfigEnv): UserConfigExport => {
 

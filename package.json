@@ -5,6 +5,7 @@
   "author": {
     "name": "pany"
   },
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build:prod": "vue-tsc --noEmit && vite build",
@@ -75,6 +76,5 @@
     "ts",
     "admin",
     "typescript"
-  ],
-  "license": "MIT"
+  ]
 }

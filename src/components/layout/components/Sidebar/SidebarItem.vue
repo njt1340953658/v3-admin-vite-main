@@ -67,7 +67,10 @@ const resolvePath = (routePath: string) => {
 </script>
 
 <template>
-  <div v-if="!props.item.meta?.hidden" :class="{ 'simple-mode': props.isCollapse, 'first-level': props.isFirstLevel }">
+  <div
+    v-if="!props.item.meta?.hidden"
+    :class="{ 'simple-mode': props.isCollapse, 'first-level': props.isFirstLevel }"
+  >
     <template v-if="!alwaysShowRootMenu && theOnlyOneChild && !theOnlyOneChild.children">
       <SidebarItemLink v-if="theOnlyOneChild.meta" :to="resolvePath(theOnlyOneChild.path)">
         <el-menu-item :index="resolvePath(theOnlyOneChild.path)">

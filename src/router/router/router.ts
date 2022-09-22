@@ -1,8 +1,12 @@
 /**
  * 动态路由
+ * title?: string
+ * icon?: string
+ * hidden?: boolean // 是否在侧边栏显示，默认false
+ * roles?: string[] // 权限码
  * roles: ["admin", "editor"], // 可以在根路由中设置角色
  * alwaysShow: true // 将始终显示根菜单
- * */
+ */
 
 import type { RouteRecordRaw } from 'vue-router'
 

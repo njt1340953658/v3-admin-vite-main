@@ -1,12 +1,9 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
-import { storeToRefs } from 'pinia'
 import { useAppStore } from '@/store/modules/app'
 import { usePermissionStore } from '@/store/modules/permission'
-import { useSettingsStore } from '@/store/modules/settings'
 import SidebarItem from './SidebarItem.vue'
-import SidebarLogo from './SidebarLogo.vue'
 import { getCssVariableValue } from '@/utils'
 
 const v3SidebarMenuBgColor = getCssVariableValue('--v3-sidebar-menu-bg-color')
@@ -16,9 +13,6 @@ const v3SidebarMenuActiveTextColor = getCssVariableValue('--v3-sidebar-menu-acti
 const route = useRoute()
 const appStore = useAppStore()
 const permissionStore = usePermissionStore()
-const settingsStore = useSettingsStore()
-
-const { showSidebarLogo } = storeToRefs(settingsStore)
 
 const activeMenu = computed(() => {
   const { meta, path } = route
@@ -34,8 +28,7 @@ const isCollapse = computed(() => {
 </script>
 
 <template>
-  <div :class="{ 'has-logo': showSidebarLogo }">
-    <SidebarLogo v-if="showSidebarLogo" :collapse="isCollapse" />
+  <div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -69,12 +62,6 @@ const isCollapse = computed(() => {
     width: 4px;
     height: 100%;
     background-color: var(--v3-sidebar-menu-tip-line-bg-color);
-  }
-}
-
-.has-logo {
-  .el-scrollbar {
-    height: calc(100% - var(--v3-header-height));
   }
 }
 

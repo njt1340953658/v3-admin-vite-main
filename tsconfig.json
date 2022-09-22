@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
     /** TS 严格模式 */
-    "strict": true,
+    "strict": false,
     "jsx": "preserve",
     "importHelpers": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "resolveJsonModule": true,
-    /** https://cn.vitejs.dev/guide/features.html#typescript-compiler-options */
     "isolatedModules": true,
     "esModuleInterop": true,
     "lib": [
@@ -42,7 +40,6 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "types/**/*.d.ts",
-    "vite.config.ts"
   ],
   /** 编译器默认排除的编译文件 */
   "exclude": [

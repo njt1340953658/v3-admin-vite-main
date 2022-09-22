@@ -1,9 +1,10 @@
 import axios from 'axios'
-import type { AxiosInstance, AxiosRequestConfig } from 'axios'
-import { useUserStoreHook } from '@/store/modules/user'
-import { ElMessage } from 'element-plus'
 import { get } from 'lodash-es'
+import { stringify } from './utilTool'
+import { ElMessage } from 'element-plus'
 import { getToken } from '@/utils/cache/cookies'
+import { useUserStoreHook } from '@/store/modules/user'
+import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 
 /** 创建请求实例 */
 function createService() {
@@ -91,20 +92,28 @@ function createService() {
 function createRequestFunction(service: AxiosInstance) {
   return function (config: AxiosRequestConfig) {
     const configDefault = {
+      timeout: 5000,
+      baseURL: import.meta.env.VITE_BASE_API,
+      data: {},
       headers: {
         // 携带 Token
         Authorization: 'Bearer ' + getToken(),
         'Content-Type': get(config, 'headers.Content-Type', 'application/json')
-      },
-      timeout: 5000,
-      baseURL: import.meta.env.VITE_BASE_API,
-      data: {}
+      }
     }
     return service(Object.assign(configDefault, config))
   }
 }
 
-/** 用于网络请求的实例 */
-export const service = createService()
-/** 用于网络请求的方法 */
-export const request = createRequestFunction(service)
+const service = createService()
+
+const httpApi = createRequestFunction(service)
+
+const request = (url: string, params: object, method?: string) => {
+  const body =
+    method === 'get' ? { url: `${url}?${stringify(params)}`, method, data: params } : { url, method, data: params }
+
+  return httpApi(body)
+}
+
+export { service, request }
