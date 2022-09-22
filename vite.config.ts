@@ -1,12 +1,11 @@
-import { loadEnv } from "vite"
-import UnoCSS from "unocss/vite"
-import path, { resolve } from "path"
-import vue from "@vitejs/plugin-vue"
-import type { ConfigEnv, UserConfigExport } from "vite"
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons"
+import { loadEnv } from 'vite'
+import UnoCSS from 'unocss/vite'
+import path, { resolve } from 'path'
+import vue from '@vitejs/plugin-vue'
+import type { ConfigEnv, UserConfigExport } from 'vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 
 export default (configEnv: ConfigEnv): UserConfigExport => {
-
   const viteEnv = loadEnv(configEnv.mode, process.cwd()) as ImportMetaEnv
 
   const { VITE_PUBLIC_PATH } = viteEnv
@@ -15,7 +14,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     base: VITE_PUBLIC_PATH,
     resolve: {
       alias: {
-        "@": resolve(__dirname, "./src")
+        '@': resolve(__dirname, './src')
       }
     },
     server: {
@@ -38,24 +37,24 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     },
     build: {
       chunkSizeWarningLimit: 2000,
-      minify: "terser",
+      minify: 'terser',
       terserOptions: {
         compress: {
           drop_console: false,
           drop_debugger: true,
-          pure_funcs: ["console.log"]
+          pure_funcs: ['console.log']
         },
         format: {
           comments: false
         }
       },
-      assetsDir: "static"
+      assetsDir: 'static'
     },
     plugins: [
       vue(),
       createSvgIconsPlugin({
-        iconDirs: [path.resolve(process.cwd(), "src/components/icons/svg")],
-        symbolId: "icon-[dir]-[name]"
+        iconDirs: [path.resolve(process.cwd(), 'src/components/icons/svg')],
+        symbolId: 'icon-[dir]-[name]'
       }),
       UnoCSS()
     ]

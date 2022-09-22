@@ -71,12 +71,17 @@
       "prettier --write--parser json"
     ]
   },
-  "keywords": [
-    "vue",
-    "element-plus",
-    "vue3",
-    "ts",
-    "admin",
-    "typescript"
+  "eslintIgnore": [
+    ".DS_Store",
+    "node_modules",
+    "dist",
+    "dist-ssr",
+    "*.local",
+    "vite.config.ts",
+    ".eslintrc.js",
+    "prettier.config.js",
+    "tsconfig.json",
+    "unocss.config.ts",
+    "README.md"
   ]
 }
