@@ -5,9 +5,9 @@ import { useUserStore } from '@/store/modules/user'
 const emit = defineEmits<{
   (e: 'change'): void
 }>()
-
 const userStore = useUserStore()
 const switchRoles = ref(userStore.roles[0])
+
 watch(switchRoles, async (value) => {
   await userStore.changeRoles(value)
   emit('change')
