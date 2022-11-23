@@ -20,7 +20,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
     server: {
       https: false,
       host: true, // host: "0.0.0.0"
-      port: 3333,
+      port: 3000,
       open: false,
       cors: true,
       strictPort: false

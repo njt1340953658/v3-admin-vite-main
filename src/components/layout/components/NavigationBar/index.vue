@@ -1,11 +1,12 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAppStore } from '@/store/modules/app'
 import { useSettingsStore } from '@/store/modules/settings'
 import { useUserStore } from '@/store/modules/user'
 import { UserFilled } from '@element-plus/icons-vue'
 import Hamburger from '../Hamburger/index.vue'
+import BreadCrumb from '../Breadcrumb/index.vue'
 import Screenfull from '@/components/Screenfull/index.vue'
 
 const router = useRouter()
@@ -21,25 +22,30 @@ const showScreenfull = computed(() => {
   return settingsStore.showScreenfull
 })
 
-const toggleSidebar = () => {
-  appStore.toggleSidebar(false)
-}
-const logout = () => {
-  userStore.logout()
-  router.push('/login')
-}
+const state = reactive({
+  toggleSideBar: () => {
+    appStore.toggleSidebar(false)
+  },
+  logout: () => {
+    userStore.logout()
+    router.push('/login').catch((err) => {
+      console.warn(err)
+    })
+  }
+})
 </script>
 
 <template>
   <div class="navigation-bar">
-    <Hamburger :is-active="sidebar.opened" class="hamburger" @toggle-click="toggleSidebar" />
+    <Hamburger :is-active="sidebar.opened" class="hamburger" @toggle-click="state.toggleSideBar" />
+    <BreadCrumb class="breadcrumb" />
     <div class="right-menu">
       <Screenfull v-if="showScreenfull" class="right-menu-item" />
       <el-dropdown class="right-menu-item">
         <el-avatar :icon="UserFilled" :size="34" />
         <template #dropdown>
           <el-dropdown-menu>
-            <el-dropdown-item @click="logout">
+            <el-dropdown-item @click="state.logout">
               <span style="display: block">退出登录</span>
             </el-dropdown-item>
           </el-dropdown-menu>
