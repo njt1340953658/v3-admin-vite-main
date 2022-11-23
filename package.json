@@ -3,7 +3,7 @@
   "version": "3.2.1",
   "description": "Vue3、TypeScript、Element-Plus、Pinia 和 Vite 等主流技术",
   "author": {
-    "name": "pany"
+    "name": "SunnyRun"
   },
   "license": "MIT",
   "scripts": {
@@ -15,19 +15,19 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\""
   },
   "dependencies": {
-    "@element-plus/icons-vue": "^2.0.10",
+    "vue": "^3.2.45",
+    "pinia": "^2.0.25",
     "axios": "^0.27.2",
-    "element-plus": "^2.2.22",
+    "nprogress": "^0.2.0",
     "js-cookie": "^3.0.1",
+    "screenfull": "^6.0.2",
+    "vue-router": "^4.1.6",
     "lodash-es": "^4.17.21",
     "normalize.css": "^8.0.1",
-    "nprogress": "^0.2.0",
     "path-browserify": "^1.0.1",
     "path-to-regexp": "^6.2.1",
-    "pinia": "^2.0.25",
-    "screenfull": "^6.0.2",
-    "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "element-plus": "^2.2.22",
+    "@element-plus/icons-vue": "^2.0.10"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.2",
