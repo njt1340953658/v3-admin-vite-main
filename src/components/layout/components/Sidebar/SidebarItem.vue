@@ -20,11 +20,11 @@
       </template>
       <template v-if="props.item.children">
         <sidebar-item
-          v-for="child in props.item.children"
           :key="child.path"
           :item="child"
-          :is-collapse="props.isCollapse"
           :is-first-level="false"
+          :is-collapse="props.isCollapse"
+          v-for="child in props.item.children"
           :base-path="resolvePath(child.path)"
         />
       </template>
