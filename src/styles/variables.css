@@ -3,10 +3,13 @@
 :root {
   /** 全局背景色 */
   --v3-body-bg-color: #f0f2f5;
+
   /** Header 区域 = NavigationBar 组件 + TagsView 组件 */
   --v3-header-height: calc(var(--v3-navigationbar-height) + var(--v3-tagsview-height));
+
   /** NavigationBar 组件 */
   --v3-navigationbar-height: 50px;
+
   /** Sidebar 组件 */
   --v3-sidebar-width: 220px;
   --v3-sidebar-hide-width: 54px;
@@ -16,8 +19,10 @@
   --v3-sidebar-menu-hover-bg-color: #ffffff10;
   --v3-sidebar-menu-text-color: #c0c4cc;
   --v3-sidebar-menu-active-text-color: #ffffff;
+
   /** SidebarLogo 组件 */
   --v3-sidebarlogo-bg-color: #0c202b;
+
   /** TagsView 组件 */
   --v3-tagsview-height: 34px;
   --v3-tagsview-tag-text-color: #495060;
@@ -29,6 +34,7 @@
   --v3-tagsview-tag-active-before-color: #ffffff;
   --v3-tagsview-tag-icon-hover-bg-color: #00000030;
   --v3-tagsview-tag-icon-hover-color: #ffffff;
+
   /** RightPanel 组件  */
   --v3-rightpanel-button-bg-color: #152d3d;
 }
