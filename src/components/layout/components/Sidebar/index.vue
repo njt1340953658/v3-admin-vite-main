@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import { useAppStore } from '@/store/modules/app'
 import { usePermissionStore } from '@/store/modules/permission'
 import SidebarItem from './SidebarItem.vue'
-import { getCssVariableValue } from '@/utils'
+import { getCssVariableValue } from '@/utils/utilTool'
 
 const v3SidebarMenuBgColor = getCssVariableValue('--v3-sidebar-menu-bg-color')
 const v3SidebarMenuTextColor = getCssVariableValue('--v3-sidebar-menu-text-color')

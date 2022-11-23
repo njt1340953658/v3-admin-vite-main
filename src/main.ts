@@ -11,9 +11,9 @@ import * as directives from '@/directives'
 
 import 'uno.css'
 import 'normalize.css'
+import '@/styles/index.scss'
 import 'element-plus/dist/index.css'
 import 'element-plus/theme-chalk/dark/css-vars.css'
-import '@/styles/index.scss'
 
 const app = createApp(App)
 

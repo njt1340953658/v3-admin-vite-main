@@ -1,3 +1,39 @@
+<template>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="title">欢迎登录</div>
+      <div class="content">
+        <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" @keyup.enter="handleLogin">
+          <el-form-item prop="username">
+            <el-input
+              v-model.trim="loginForm.username"
+              placeholder="用户名"
+              type="text"
+              tabindex="1"
+              :prefix-icon="User"
+              size="large"
+            />
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+              v-model.trim="loginForm.password"
+              placeholder="密码"
+              type="password"
+              tabindex="2"
+              :prefix-icon="Lock"
+              size="large"
+              show-password
+            />
+          </el-form-item>
+          <el-button :loading="loading" type="primary" size="large" @click.prevent="handleLogin">
+            登 录
+          </el-button>
+        </el-form>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -53,42 +89,6 @@ const handleLogin = () => {
 }
 </script>
 
-<template>
-  <div class="login-container">
-    <div class="login-card">
-      <div class="title">欢迎登录</div>
-      <div class="content">
-        <el-form ref="loginFormRef" :model="loginForm" :rules="loginFormRules" @keyup.enter="handleLogin">
-          <el-form-item prop="username">
-            <el-input
-              v-model.trim="loginForm.username"
-              placeholder="用户名"
-              type="text"
-              tabindex="1"
-              :prefix-icon="User"
-              size="large"
-            />
-          </el-form-item>
-          <el-form-item prop="password">
-            <el-input
-              v-model.trim="loginForm.password"
-              placeholder="密码"
-              type="password"
-              tabindex="2"
-              :prefix-icon="Lock"
-              size="large"
-              show-password
-            />
-          </el-form-item>
-          <el-button :loading="loading" type="primary" size="large" @click.prevent="handleLogin">
-            登 录
-          </el-button>
-        </el-form>
-      </div>
-    </div>
-  </div>
-</template>
-
 <style lang="scss" scoped>
 .login-container {
   display: flex;
@@ -105,8 +105,7 @@ const handleLogin = () => {
   }
   .login-card {
     width: 380px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px #dcdfe6;
+    border-radius: 10px;
     background-color: #fff;
     overflow: hidden;
     .title {

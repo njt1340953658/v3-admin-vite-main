@@ -8,11 +8,11 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "prepare": "husky install",
     "build:prod": "vue-tsc --noEmit && vite build",
     "preview:prod": "npm build:prod && vite preview",
     "lint": "eslint \"src/**/*.{vue,ts,tsx}\" --fix",
-    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "prepare": "husky install"
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\""
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -46,8 +46,8 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "sass": "^1.54.9",
-    "terser": "^5.15.0",
+    "sass": "^1.56.1",
+    "terser": "^5.15.1",
     "typescript": "^4.8.3",
     "unocss": "^0.45.30",
     "vite": "^3.2.4",
