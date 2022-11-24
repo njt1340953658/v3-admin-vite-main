@@ -14,20 +14,20 @@ const asyncRoutes: RouteRecordRaw[] = [
     children: [
       {
         path: 'page',
-        component: () => import('@/views/permission/page.vue'),
         name: 'PagePermission',
         meta: {
           title: '页面权限',
           roles: ['admin'] // 或者在子导航中设置角色
-        }
+        },
+        component: () => import('@/views/permission/page.vue')
       },
       {
         path: 'directive',
-        component: () => import('@/views/permission/directive.vue'),
         name: 'DirectivePermission',
         meta: {
           title: '指令权限' // 如果未设置角色，则表示：该页面不需要权限，但会继承根路由的角色
-        }
+        },
+        component: () => import('@/views/permission/directive.vue')
       }
     ]
   }

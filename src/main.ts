@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import type { Directive } from 'vue'
 import store from './store'
 import router from './router'
-import '@/router/permission'
+import '@/router/RouterLogic'
 import App from './App.vue'
 
 import ElementPlus from 'element-plus'

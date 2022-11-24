@@ -2,11 +2,13 @@ import router from '@/router'
 import { useUserStoreHook } from '@/store/modules/user'
 import { usePermissionStoreHook } from '@/store/modules/permission'
 import { ElMessage } from 'element-plus'
-import { whiteList } from './interface/white-list'
 import { getToken } from '@/utils/cache/cookies'
 import asyncRouteSettings from './interface/async-route'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
+
+/** 免登录白名单 */
+const whiteLoginList = ['/login']
 
 NProgress.configure({ showSpinner: false })
 
@@ -54,7 +56,7 @@ router.beforeEach(async (to, _from, next) => {
       }
     }
   } else {
-    if (whiteList.indexOf(to.path) !== -1) {
+    if (whiteLoginList.indexOf(to.path) !== -1) {
       next()
     } else {
       next('/login')
