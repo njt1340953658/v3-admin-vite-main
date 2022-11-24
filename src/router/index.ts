@@ -1,24 +1,28 @@
-import type { RouteRecordRaw } from 'vue-router'
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
-
-import { asyncRoutesFrom, constantRoutesFrom } from './router/router'
-
 /**
- * 动态路由(权限控制)
+ * 动态路由
+ * title?: string
+ * icon?: string
+ * hidden?: boolean // 是否在侧边栏显示，默认false
+ * roles?: string[] // 权限码
+ * roles: ["admin", "editor"], // 可以在根路由中设置角色
+ * alwaysShow: true // 将始终显示根菜单
  */
-const asyncRoutes: RouteRecordRaw[] = [...asyncRoutesFrom]
+import asyncRoute from './router/asyncRoutes'
+import constantRoute from './router/constantRoutes'
+import { type RouteRecordRaw, createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
-/** 常驻路由 */
-const constantRoutes: RouteRecordRaw[] = [...constantRoutesFrom]
+// 没有权限基础页面
+export const constantRoutes: RouteRecordRaw[] = [...constantRoute]
 
-export { asyncRoutes, constantRoutes }
+// 动态路由(权限控制)
+export const asyncRoutes: RouteRecordRaw[] = [...asyncRoute]
 
 const router = createRouter({
   history:
     import.meta.env.VITE_ROUTER_HISTORY === 'hash'
       ? createWebHashHistory(import.meta.env.VITE_PUBLIC_PATH)
       : createWebHistory(import.meta.env.VITE_PUBLIC_PATH),
-  routes: constantRoutes
+  routes: [...constantRoutes, ...asyncRoutes]
 })
 
 /** 重置路由
