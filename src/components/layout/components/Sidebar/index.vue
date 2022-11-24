@@ -29,6 +29,7 @@ const isCollapse = computed(() => {
 
 <template>
   <div>
+    <div class="sidebar_Logo">后台管理系统</div>
     <el-scrollbar wrap-class="scrollbar-wrapper">
       <el-menu
         :default-active="activeMenu"
@@ -63,6 +64,16 @@ const isCollapse = computed(() => {
     height: 100%;
     background-color: var(--v3-sidebar-menu-tip-line-bg-color);
   }
+}
+
+.sidebar_Logo {
+  height: 50px;
+  color: var(--v3-sidebar-menu-text-color);
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--v3-sidebarlogo-bg-color);
 }
 
 .el-scrollbar {
@@ -106,6 +117,7 @@ const isCollapse = computed(() => {
 ::v-deep(.el-menu-item) {
   &.is-active {
     @include tip-line;
+    background-color: var(--v3-sidebar-menu-hover-bg-color);
   }
 }
 

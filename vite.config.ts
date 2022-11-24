@@ -1,5 +1,4 @@
 import { loadEnv } from 'vite'
-import UnoCSS from 'unocss/vite'
 import path, { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
 import type { ConfigEnv, UserConfigExport } from 'vite'
@@ -55,8 +54,7 @@ export default (configEnv: ConfigEnv): UserConfigExport => {
       createSvgIconsPlugin({
         iconDirs: [path.resolve(process.cwd(), 'src/components/icons/svg')],
         symbolId: 'icon-[dir]-[name]'
-      }),
-      UnoCSS()
+      })
     ]
   }
 }

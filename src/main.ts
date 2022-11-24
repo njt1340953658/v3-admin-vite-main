@@ -9,7 +9,6 @@ import ElementPlus from 'element-plus'
 import loadSvg from '@/components/icons'
 import * as directives from '@/directives'
 
-import 'uno.css'
 import 'normalize.css'
 import '@/styles/index.scss'
 import 'element-plus/dist/index.css'

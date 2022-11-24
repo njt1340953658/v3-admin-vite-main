@@ -57,9 +57,10 @@ const state = reactive({
 
 <style lang="scss" scoped>
 .navigation-bar {
-  height: var(--v3-navigationbar-height);
   overflow: hidden;
   background: #fff;
+  height: var(--v3-navigationbar-height);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
   .hamburger {
     display: flex;
     align-items: center;

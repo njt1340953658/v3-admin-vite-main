@@ -1,13 +1,14 @@
-# v3-vite
+#### CDN后台系统相关描述
 
 ```
-npm install
+pnpm install
 
 npm run dev
 
 npm run build:prod
 ```
 
+```js
 ├─ public
 │  ├─ favicon.ico
 ├─ src
@@ -34,3 +35,4 @@ npm run build:prod
 ├─ tsconfig.json         # ts 编译配置
 ├─ unocss.config.ts      # unocss 配置
 └─ vite.config.ts        # vite 配置
+```

@@ -47,7 +47,6 @@
     "sass": "^1.56.1",
     "terser": "^5.15.1",
     "typescript": "^4.8.3",
-    "unocss": "^0.45.30",
     "vite": "^3.2.4",
     "vite-plugin-svg-icons": "^2.0.1",
     "vue-eslint-parser": "^9.1.0",
@@ -78,7 +77,6 @@
     ".eslintrc.js",
     "prettier.config.js",
     "tsconfig.json",
-    "unocss.config.ts",
     "README.md"
   ]
 }
